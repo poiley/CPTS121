@@ -1,0 +1,6 @@
+﻿  main.c
+c:\users\benjamin poile\documents\visual studio 2015\projects\lab3task1\lab3task1\main.c(11): warning C4013: 'BMI' undefined; assuming extern returning int
+c:\users\benjamin poile\documents\visual studio 2015\projects\lab3task1\lab3task1\main.c(9): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1270): note: see declaration of 'scanf'
+c:\users\benjamin poile\documents\visual studio 2015\projects\lab3task1\lab3task1\main.c(11): warning C4477: 'printf' : format string '%lf' requires an argument of type 'double', but variadic argument 1 has type 'int'
+c:\users\benjamin poile\documents\visual studio 2015\projects\lab3task1\lab3task1\main.c(14): error C2371: 'BMI': redefinition; different basic types

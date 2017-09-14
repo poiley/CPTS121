@@ -1,0 +1,5 @@
+﻿  main.c
+c:\users\benjamin poile\documents\visual studio 2015\projects\lab2task1\lab2task1\main.c(9): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1270): note: see declaration of 'scanf'
+  Lab2Task1.vcxproj -> c:\users\benjamin poile\documents\visual studio 2015\Projects\Lab2Task1\Debug\Lab2Task1.exe
+  Lab2Task1.vcxproj -> c:\users\benjamin poile\documents\visual studio 2015\Projects\Lab2Task1\Debug\Lab2Task1.pdb (Full PDB)
