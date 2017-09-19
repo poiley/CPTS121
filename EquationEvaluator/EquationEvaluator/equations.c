@@ -6,7 +6,6 @@
 * Description: This program calculates a scope of equations.		 *
 **********************************************************************/
 
-#include <math.h>
 #include "equations.h"
 
 /*Newton's Second Law*/

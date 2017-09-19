@@ -57,7 +57,7 @@ int main(void) {
 		} else if (input == 5) { // Menu item 5
 			double theta;
 
-			printf("Input the angle theta:\n");
+			printf("Input the angle theta in radians:\n");
 			scanf("%lf", &theta);
 
 			printf("Tangent : tan(theta) : tan(%lf) : %lf.2\n", theta, calculate_tangent(theta));
