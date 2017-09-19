@@ -54,13 +54,13 @@ void main(void) {
 	double standard_deviation_gpa = calculate_standard_deviation(variance_gpa);
 	print_double(out, standard_deviation_gpa);
 
-	//Determines the min of the GPAs, writing the result to the output file (output.dat);
-	double max_gpa = find_max(GPA[0], GPA[1], GPA[2], GPA[3], GPA[4]);
-	print_double(out, max_gpa);
-
 	//Determines the max of the GPAs, writing the result to the output file (output.dat);
 	double min_gpa = find_min(GPA[0], GPA[1], GPA[2], GPA[3], GPA[4]);
 	print_double(out, min_gpa);
+
+	//Determines the min of the GPAs, writing the result to the output file (output.dat);
+	double max_gpa = find_max(GPA[0], GPA[1], GPA[2], GPA[3], GPA[4]);
+	print_double(out, max_gpa);
 
 	//	Closes the input and output files (i.e. input.dat and output.dat)
 	fclose(in);
