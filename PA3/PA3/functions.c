@@ -37,7 +37,8 @@ double calculate_standard_deviation(double variance) {
 double find_max(double num1, double num2, double num3, double num4, double num5) {
 	double arr[5] = { num1, num2, num3, num4, num5 };
 	double largest = num1;
-	for (int i = 0; i <= 5; i++)
+
+	for ( int i = 0; i < 5; i++ )
 		if (largest < arr[i])
 			largest = arr[i];
 
@@ -47,7 +48,8 @@ double find_max(double num1, double num2, double num3, double num4, double num5)
 double find_min(double num1, double num2, double num3, double num4, double num5) {
 	double arr[5] = { num1, num2, num3, num4, num5 };
 	double smallest = num1;
-	for (int i = 0; i <= 5; i++)
+
+	for ( int i = 0; i < 5; i++ )
 		if (smallest > arr[i])
 			smallest = arr[i];
 
@@ -55,5 +57,5 @@ double find_min(double num1, double num2, double num3, double num4, double num5)
 }
 
 void print_double(FILE *outfile, double number) {
-
+	fprintf(outfile, "%lf\n", number);
 }
