@@ -1,3 +1,12 @@
+/*********************************************************************
+* Programmer: Benjamin Poile
+* Class: CptS 121, Fall 2017, Lab Section 14
+* Programming Assignment: PA 3
+* Date: Sept 19th, 2017
+* Description: This program calculates student data from a file, and 
+* prints it to a different file
+**********************************************************************/
+
 #include <stdio.h>
 #include <math.h>
 
