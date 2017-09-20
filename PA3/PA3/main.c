@@ -1,8 +1,16 @@
+/*********************************************************************
+* Programmer: Benjamin Poile
+* Class: CptS 121, Fall 2017, Lab Section 14
+* Programming Assignment: PA 3
+* Date: Sept 19th, 2017
+* Description: This program calculates student data from a file, and 
+* prints it to a different file
+**********************************************************************/
+
 #include "head.h"
 
 void main(void) {
-	FILE *in = NULL;
-	FILE *out = NULL;
+	FILE *in = NULL, *out = NULL;
 	int student_id[5], class_standing[5];
 	double GPA[5], ages[5];
 
@@ -24,25 +32,21 @@ void main(void) {
 	double sum_gpa = calculate_sum(GPA[0], GPA[1], GPA[2], GPA[3], GPA[4]);
 
 	//Calculates the sum of the class standings;
-
 	double sum_class_standings = calculate_sum(class_standing[0], class_standing[1], class_standing[2], class_standing[3], class_standing[4]);
 
 	//Calculates the sum of the ages;
 	double sum_ages = calculate_sum(ages[0], ages[1], ages[2], ages[3], ages[4]);
 
 	//Calculates the mean of the GPAs, writing the result to the output file (output.dat);
-	double mean_gpa = calculate_mean(sum_gpa, 5);
-	print_double(out, mean_gpa);
+	print_double(out, calculate_mean(sum_gpa, 5));
 
 	//Calculates the mean of the class standings, writing the result to the output file (output.dat);
-	double mean_class_standings = calculate_mean(sum_class_standings, 5);
-	print_double(out, mean_class_standings);
+	print_double(out, calculate_mean(sum_class_standings, 5));
 
 	//Calculates the mean of the ages, writing the result to the output file (output.dat);
-	double mean_ages = calculate_mean(sum_ages, 5);
-	print_double(out, mean_ages);
+	print_double(out, calculate_mean(sum_ages, 5));
 
-	//Calculates the deviation of each GPA from the mean (Hint: need to call calculate_deviation ( ) 5 times)
+	//Calculates the deviation of each GPA from the mean
 	double deviation_gpa[5];
 	for (int j = 0; j < 5; j++)
 		deviation_gpa[j] = calculate_deviation(GPA[j], mean_gpa);
@@ -51,18 +55,15 @@ void main(void) {
 	double variance_gpa = calculate_variance(deviation_gpa[0], deviation_gpa[1], deviation_gpa[2], deviation_gpa[3], deviation_gpa[4], 5);
 
 	//Calculates the standard deviation of the GPAs, writing the result to the output file (output.dat);
-	double standard_deviation_gpa = calculate_standard_deviation(variance_gpa);
-	print_double(out, standard_deviation_gpa);
+	print_double(out, calculate_standard_deviation(variance_gpa));
 
 	//Determines the max of the GPAs, writing the result to the output file (output.dat);
-	double min_gpa = find_min(GPA[0], GPA[1], GPA[2], GPA[3], GPA[4]);
-	print_double(out, min_gpa);
+	print_double(out, find_min(GPA[0], GPA[1], GPA[2], GPA[3], GPA[4]));
 
 	//Determines the min of the GPAs, writing the result to the output file (output.dat);
-	double max_gpa = find_max(GPA[0], GPA[1], GPA[2], GPA[3], GPA[4]);
-	print_double(out, max_gpa);
+	print_double(out, find_max(GPA[0], GPA[1], GPA[2], GPA[3], GPA[4]));
 
-	//	Closes the input and output files (i.e. input.dat and output.dat)
+	//Closes the input and output files (i.e. input.dat and output.dat)
 	fclose(in);
 	fclose(out);
 }
