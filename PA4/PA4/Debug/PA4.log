@@ -1,0 +1,21 @@
+﻿  main.c
+c:\users\benjamin poile\documents\visual studio 2015\projects\pa4\pa4\main.c(17): warning C4013: 'printf' undefined; assuming extern returning int
+c:\users\benjamin poile\documents\visual studio 2015\projects\pa4\pa4\main.c(29): warning C4244: 'function': conversion from 'double' to 'int', possible loss of data
+c:\users\benjamin poile\documents\visual studio 2015\projects\pa4\pa4\main.c(32): warning C4244: 'function': conversion from 'double' to 'int', possible loss of data
+c:\users\benjamin poile\documents\visual studio 2015\projects\pa4\pa4\main.c(44): warning C4244: 'function': conversion from 'double' to 'int', possible loss of data
+c:\users\benjamin poile\documents\visual studio 2015\projects\pa4\pa4\main.c(47): warning C4013: 'is_point_loss_or_point' undefined; assuming extern returning int
+  equations.c
+c:\users\benjamin poile\documents\visual studio 2015\projects\pa4\pa4\equations.c(5): warning C4013: 'printf' undefined; assuming extern returning int
+c:\users\benjamin poile\documents\visual studio 2015\projects\pa4\pa4\equations.c(15): warning C4013: 'scanf' undefined; assuming extern returning int
+c:\users\benjamin poile\documents\visual studio 2015\projects\pa4\pa4\equations.c(42): warning C4013: 'rand' undefined; assuming extern returning int
+c:\users\benjamin poile\documents\visual studio 2015\projects\pa4\pa4\equations.c(104): warning C4129: '_': unrecognized character escape sequence
+c:\users\benjamin poile\documents\visual studio 2015\projects\pa4\pa4\equations.c(104): warning C4566: character represented by universal-character-name '\u30C4' cannot be represented in the current code page (1252)
+  Generating Code...
+c:\users\benjamin poile\documents\visual studio 2015\projects\pa4\pa4\equations.c(25): warning C4700: uninitialized local variable 'wager' used
+c:\users\benjamin poile\documents\visual studio 2015\projects\pa4\pa4\equations.c(15): warning C4700: uninitialized local variable 'balance' used
+c:\users\benjamin poile\documents\visual studio 2015\projects\pa4\pa4\main.c(33): warning C4700: uninitialized local variable 'wager' used
+equations.obj : error LNK2019: unresolved external symbol _printf referenced in function _chatter_messages
+main.obj : error LNK2001: unresolved external symbol _printf
+equations.obj : error LNK2019: unresolved external symbol _scanf referenced in function _get_bank_balance
+main.obj : error LNK2019: unresolved external symbol _is_point_loss_or_point referenced in function _main
+c:\users\benjamin poile\documents\visual studio 2015\Projects\PA4\Debug\PA4.exe : fatal error LNK1120: 3 unresolved externals
