@@ -1,3 +1,11 @@
+/*********************************************************************
+* Programmer: Benjamin Poile										 *
+* Class: CptS 121, Fall 2017, Lab Section 14						 *
+* Programming Assignment: PA 4										 *
+* Date: Oct 5th, 2017												 *
+* Description: Craps												 *
+**********************************************************************/
+
 # include "equations.h"
 
 /* A player rolls two dice. Each die has six faces. These faces contain 1, 2, 3, 4, 5, and 6
@@ -7,47 +15,47 @@
  * the sum is 4, 5, 6, 8, 9, or 10 on the first throw, then the sum becomes the player's 
  * "point." To win, you must continue rolling the dice until you "make your point." The 
  * player loses by rolling a 7 before making the point.*/
-
 void main(void) {
-	int run = 1, roll_counter = 1, winlossneither;
+	int run = 1, roll_counter = 1, point_value = 0, wln;
 	double wager;
 
 	print_game_rules();
 	double balance = get_bank_balance();
-	printf("Current Balance: %lf", balance);
+	printf("Current Balance: %.2lf", balance);
 
+	do {
+		do {
+			wager = get_wager_amount();
+		} while (check_wager_amount(wager, balance) != 1);
 
-	while (run == 1) {
-		double wager = get_wager_amount();
-		if (check_wager_amount(wager, balance) == 0)
-			continue;
-		break;
-	}
+		int d1 = roll_die();
+		int d2 = roll_die();
 
-	double d1 = roll_die();
-	double d2 = roll_die();
-	double sum = calculate_sum_dice(d1, d2);
-	double previous_balance = balance;
+		int dice_sum = calculate_sum_dice(d1, d2);
 
-	winlossneither = is_win_loss_or_point(sum);
-	balance = adjust_bank_balance(balance, wager, winlossneither);
+		printf("You rolled %d from %d and %d.\n", dice_sum, d1, d2);
 
-	chatter_messages(roll_counter, winlossneither, previous_balance, balance);
-	
-	while(run == 1) {
-		wager = get_wager_amount();
-		if (check_wager_amount(wager, balance) == 0)
-			continue;
-
-		d1 = roll_die();
-		d2 = roll_die();
-		sum = calculate_sum_dice(d1, d2);
-		roll_counter++;
+		if (roll_counter == 1) {
+			wln = is_win_loss_or_point(dice_sum);
+			if (wln == -1) {
+				point_value = dice_sum;
+				printf("Your point value is %d.\n", point_value);
+			}
+		} else {
+			wln = is_point_loss_or_neither(dice_sum, point_value);
+		}
 		
-		winlossneither = is_point_loss_or_point(sum);
-		balance = adjust_bank_balance(balance, wager, winlossneither);
+		int temp_balance = balance;
 
-		chatter_messages(roll_counter, winlossneither, previous_balance, balance);
-	}
+		balance = adjust_bank_balance(balance, wager, wln);
+
+		chatter_messages(roll_counter, wln, temp_balance, balance);
+
+		roll_counter++;
+
+		printf("Press 1 to keep playing, 0 to quit.");
+		scanf("%d", &run);
+	} while(run == 1);
+
 
 }

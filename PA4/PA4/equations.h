@@ -1,5 +1,15 @@
-#include <math.h>
+/*********************************************************************
+* Programmer: Benjamin Poile										 *
+* Class: CptS 121, Fall 2017, Lab Section 14						 *
+* Programming Assignment: PA 4										 *
+* Date: Oct 5th, 2017												 *
+* Description: Craps												 *
+**********************************************************************/
 
+#include <math.h>
+#include <stdio.h>
+#include <time.h>
+#include <stdlib.h>
 
 /* Prints out the rules of the game of "craps".*/
 void print_game_rules(void);
