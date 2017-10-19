@@ -55,7 +55,7 @@ void main(void) {
 
 		printf("Press 1 to keep playing, 0 to quit.");
 		scanf("%d", &run);
-	} while(run == 1);
+	} while(run == 1 || balance <= 0);
 
 
 }
