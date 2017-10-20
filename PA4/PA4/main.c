@@ -15,7 +15,9 @@
  * the sum is 4, 5, 6, 8, 9, or 10 on the first throw, then the sum becomes the player's 
  * "point." To win, you must continue rolling the dice until you "make your point." The 
  * player loses by rolling a 7 before making the point.*/
+
 void main(void) {
+	srand((unsigned int)time(NULL));
 	int run = 1, roll_counter = 1, point_value = 0, wln;
 	double wager;
 
@@ -27,6 +29,7 @@ void main(void) {
 		do {
 			wager = get_wager_amount();
 		} while (check_wager_amount(wager, balance) != 1);
+
 
 		int d1 = roll_die();
 		int d2 = roll_die();
@@ -53,9 +56,9 @@ void main(void) {
 
 		roll_counter++;
 
-		printf("Press 1 to keep playing, 0 to quit.");
+		printf("Press 1 to keep playing, 0 to quit.\n");
 		scanf("%d", &run);
-	} while(run == 1);
+	} while(run == 1 && balance >= 0);
 
 
 }
