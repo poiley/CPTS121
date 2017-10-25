@@ -47,7 +47,6 @@ int check_wager_amount(double wager, double balance) {
 /* Rolls one die.This function should randomly generate a value between 1 and 
  * 6, inclusively.Returns the value of the die.*/
 int roll_die(void) {
-	srand((unsigned int)time(NULL));
 	return (rand() % 6) + 1;
 }
 

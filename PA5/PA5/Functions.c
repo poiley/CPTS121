@@ -33,10 +33,10 @@ int roll_dice(void) {
 void start_game(void) {
 	int player1_score = 0, player2_score = 0;
 	for (int i = 0; i < 14; i++) {
-		printf("Player 1, it's your turn!\n");
+		printf("\nPlayer 1, it's your turn!\n");
 		player1_score += turns();
 
-		printf("Player 2, it's your turn!\n");
+		printf("\nPlayer 2, it's your turn!\n");
 		player2_score += turns();
 	}
 
@@ -58,58 +58,54 @@ int turns(void) {
 	getchar(); getchar(); // Two getchar()'s are needed here, as it reads the newline in from the previous method.
 
 	int dice_values[5], rolls = 0;
+	
+	for (int i = 0; i < 5; i++)
+		dice_values[i] = roll_dice();
 
 	do {
-		for (int i = 0; i < 5; i++) {
-			dice_values[i] = roll_dice();
-			printf("Dice #%d. %d\n", (i + 1), dice_values[i]);
-		}
-
 		if (rolls < 3) {
-			char yn;
+			char yn = 'N';
+			for(int i = 0; i < 5; i++)
+				printf("Dice #%d. %d\n", (i + 1), dice_values[i]);
+
 			printf("Do you want to use this roll for one of the game combos? [Y/N]\n");
-			scanf("%c", &yn);
-			if (toupper(yn) == 'Y') {
+			scanf(" %c", &yn);
+			if (yn == 'Y' || yn == 'y') {
 				break;
 			} else {
-				int reroll_amount = 0;
-				
-				do {
-					printf("How many dice would you like to re-roll?");
-					scanf("%d", &reroll_amount);
-					if (reroll_amount >= 6)
-						continue;
-					for (int i = 0; i < reroll_amount; i++) {
-						int index;
-						printf("Which dice would you like to reroll?");
-						scanf("%d", &index);
-						dice_values[index] = roll_dice();
-					}
-					break;
-				} while (reroll_amount <= 6);
-
+				for (int i = 0; i < 5; i++) {
+					char answer = 'N';
+					printf("Would you like to re-roll dice #%d?\n", (i + 1));
+					scanf(" %c", &answer);
+					if (answer == 'Y' || answer == 'y')
+						dice_values[i] = roll_dice();
+				}
 				rolls++;
-				continue;
 			}
 		} else if (rolls == 3) {
 			break;
 		}
 	} while (rolls <= 3);
 	
-	//DICE VALUES IS NOW FINAL
+	//DICE VALUES ARE NOW FINAL
+	for (int i = 0; i < 5; i++)
+		printf("Dice #%d. %d\n", (i + 1), dice_values[i]);
+
 	int points = determine_score(dice_values);
 	printf("Points from this round: %d", points);
 
 	return points;
 }
 
-int determine_score(int dice_values[]) {
+int determine_score(int *dice_values) {
 
 	int selection;
 	printf("1.\tSum of 1's\t7.\tThree-of-a-kind\n2.\tSum of 2's\t8.\tFour-of-a-kind\n3.\tSum of 3's\t9.\tFull house\n4.\tSum of 4's\t10.\tSmall straight\n5.\tSum of 5's\t11.\tLarge straight\n6.\tSum of 6's\t12.\tYahtzee\n\t13. Chance\n");
 	scanf("%d", &selection);
 
-	int auxillary_arr[5], counter, sum, a = 0, b = -1;
+	int auxillary_arr[5], counter, sum = 0, a = 0, b = -1;
+	int dice_tracker[6] = { 0 };
+
 	for (int i = 0; i < 5; i++)
 		sum += dice_values[i];
 
@@ -126,62 +122,59 @@ int determine_score(int dice_values[]) {
 			return sum_calculator(5, dice_values);
 		case 6:
 			return sum_calculator(6, dice_values);
+			break;
 		case 7:
-		case 8:
-			for (int j = 0; j < 5; j++) {
-				for (int i = 0; i < 5; i++) {
-					if ((j + 1) == dice_values[i])
-						counter++;
-				}
-			}
+		case 8: // 3 and 4 of a kind
+			for (int i = 0; i < 5; i++)
+				dice_tracker[dice_values[i] - 1] += 1;
+
+			int counter = dice_tracker[0];
+			for (int i = 0; i <= 5; i++)
+				if (i == 4 && dice_tracker[4] < dice_tracker[5])
+					counter = dice_tracker[5];
+				else if (dice_tracker[i] < dice_tracker[i + 1])
+					counter = dice_tracker[i + 1];
+			
 			if (counter >= 3)
 				return sum;
 			return 0;
 		case 9:
-			for (int i = 0; i < 5; i++) {
-				for (int j = 0; j < 5; j++) {
-					if ((i + 1) == dice_values[j]) {
-						counter++;
-						auxillary_arr[j] = i + 1;
-					}
-				}
-				if (counter >= 3) {
-					for (int j = 0; j < 5; j++) {
-						if (auxillary_arr[j] != (j + 1))
-							if (a == 0)
-								a = dice_values[j];
-							else
-								b = dice_values[j];
-					}
-				}
-			}
+			for (int i = 0; i < 5; i++)
+				dice_tracker[dice_values[i] - 1] += 1;
 
-			if (a == b)
-				return 25;
+			for (int i = 0; i <= 5; i++)
+				for (int j = 0; j <= 5; j++)
+					if (dice_tracker[i] == 3 && dice_tracker[j] == 2)
+						return 25;
 			return 0;
 		case 10:
-			for (int i = 0; i < 5; i++) {
-				if (i != 4) {
-					if (dice_values[i] < dice_values[i + 1])
-						return 0;
-				} else {
-					if (dice_values[4] < dice_values[5]);
-						return 0;
-				}
+			counter = 0;
+
+			for (int i = 0; i < 5; i++)
+				dice_tracker[dice_values[i] - 1] += 1;
+
+			for (int i = 0; i <= 5; i++) {
+				if (dice_tracker[i] >= 3) return 0;
+				if (i > 1 && i < 4 && counter == 0) return 0;
+				if (i == 4 && dice_tracker[5] > 0) counter++;
+				if ((i != 4 || i != 5) && dice_tracker[i] == dice_tracker[i + 1]) counter++;
+				if (counter == 4) return 30;
 			}
-			return 30;
+			return 0;
 		case 11:
-			for (int i = 0; i < 5; i++) {
-				if (i != 4) {
-					if (dice_values[i] < dice_values[i + 1])
-						return 0;
-				}
-				else {
-					if (dice_values[4] < dice_values[5]);
-					return 0;
-				}
+			counter = 0;
+
+			for (int i = 0; i < 5; i++)
+				dice_tracker[dice_values[i] - 1] += 1;
+
+			for (int i = 0; i <= 5; i++) {
+				if (dice_tracker[i] >= 3) return 0;
+				if (i > 1 && i < 4 && counter == 0) return 0;
+				if (i == 4 && dice_tracker[5] > 0) counter++;
+				if ((i != 4 || i != 5) && dice_tracker[i] == dice_tracker[i + 1]) counter++;
+				if (counter == 5) return 40;
 			}
-			return 40;
+			return 0;
 		case 12:
 			for (int i = 0; i < 5; i++)
 				for (int j = 0; j < 5; j++)

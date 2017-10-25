@@ -7,4 +7,5 @@ void start_game(void);
 int menu(int menu_val);
 
 int roll_dice(void);
-int determine_score(int dice_values[]);
+int sum_calculator(int x, int dice_values[]);
+int determine_score(int *dice_values);
