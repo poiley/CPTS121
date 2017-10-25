@@ -1,0 +1,5 @@
+﻿  Main.c
+c:\users\benjamin poile\documents\visual studio 2015\projects\lab8\lab8\main.c(21): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1270): note: see declaration of 'scanf'
+  Lab8.vcxproj -> c:\users\benjamin poile\documents\visual studio 2015\Projects\Lab8\Debug\Lab8.exe
+  Lab8.vcxproj -> c:\users\benjamin poile\documents\visual studio 2015\Projects\Lab8\Debug\Lab8.pdb (Full PDB)
