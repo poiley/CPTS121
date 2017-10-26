@@ -2,7 +2,8 @@
 
 int main(void) {
 	int menu_selection;
-	
+	srand((unsigned int) time (NULL));
+
 	do {
 		printf("\nMenu:\n1.\tPlay\n2.\tRules\n3.\tQuit\n");
 		scanf("%d", &menu_selection);
