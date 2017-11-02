@@ -1,2 +1,39 @@
-﻿  PA6.vcxproj -> C:\Users\Benjamin Poile\documents\visual studio 2015\Projects\PA6\Debug\PA6.exe
+﻿  Functions.c
+c:\users\benjamin poile\documents\visual studio 2015\projects\pa6\pa6\functions.c(33): warning C4047: '=': 'char' differs in levels of indirection from 'char *'
+c:\users\benjamin poile\documents\visual studio 2015\projects\pa6\pa6\functions.c(35): warning C4047: '=': 'char' differs in levels of indirection from 'char *'
+c:\users\benjamin poile\documents\visual studio 2015\projects\pa6\pa6\functions.c(36): warning C4047: '=': 'char' differs in levels of indirection from 'char *'
+c:\users\benjamin poile\documents\visual studio 2015\projects\pa6\pa6\functions.c(31): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1270): note: see declaration of 'scanf'
+c:\users\benjamin poile\documents\visual studio 2015\projects\pa6\pa6\functions.c(98): warning C4047: '==': 'int' differs in levels of indirection from 'char [2]'
+c:\users\benjamin poile\documents\visual studio 2015\projects\pa6\pa6\functions.c(99): warning C4047: '=': 'char' differs in levels of indirection from 'char [2]'
+c:\users\benjamin poile\documents\visual studio 2015\projects\pa6\pa6\functions.c(119): warning C4013: 'check_collision' undefined; assuming extern returning int
+c:\users\benjamin poile\documents\visual studio 2015\projects\pa6\pa6\functions.c(135): warning C4047: 'return': 'char *' differs in levels of indirection from 'char (*)[10]'
+c:\users\benjamin poile\documents\visual studio 2015\projects\pa6\pa6\functions.c(70): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1270): note: see declaration of 'scanf'
+c:\users\benjamin poile\documents\visual studio 2015\projects\pa6\pa6\functions.c(76): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1270): note: see declaration of 'scanf'
+c:\users\benjamin poile\documents\visual studio 2015\projects\pa6\pa6\functions.c(87): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1270): note: see declaration of 'scanf'
+c:\users\benjamin poile\documents\visual studio 2015\projects\pa6\pa6\functions.c(97): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1270): note: see declaration of 'scanf'
+c:\users\benjamin poile\documents\visual studio 2015\projects\pa6\pa6\functions.c(110): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1270): note: see declaration of 'scanf'
+c:\users\benjamin poile\documents\visual studio 2015\projects\pa6\pa6\functions.c(143): warning C4013: 'rand' undefined; assuming extern returning int
+c:\users\benjamin poile\documents\visual studio 2015\projects\pa6\pa6\functions.c(194): warning C4047: 'return': 'char *' differs in levels of indirection from 'char (*)[10]'
+c:\users\benjamin poile\documents\visual studio 2015\projects\pa6\pa6\functions.c(212): warning C4047: '=': 'char (*)[10]' differs in levels of indirection from 'char *'
+c:\users\benjamin poile\documents\visual studio 2015\projects\pa6\pa6\functions.c(213): warning C4047: '=': 'char (*)[10]' differs in levels of indirection from 'char *'
+c:\users\benjamin poile\documents\visual studio 2015\projects\pa6\pa6\functions.c(214): warning C4047: '=': 'char (*)[10]' differs in levels of indirection from 'char *'
+c:\users\benjamin poile\documents\visual studio 2015\projects\pa6\pa6\functions.c(215): warning C4047: '=': 'char (*)[10]' differs in levels of indirection from 'char *'
+c:\users\benjamin poile\documents\visual studio 2015\projects\pa6\pa6\functions.c(216): warning C4047: '=': 'char (*)[10]' differs in levels of indirection from 'char *'
+c:\users\benjamin poile\documents\visual studio 2015\projects\pa6\pa6\functions.c(220): warning C4047: 'return': 'char *' differs in levels of indirection from 'char (*)[10]'
+c:\users\benjamin poile\documents\visual studio 2015\projects\pa6\pa6\functions.c(224): warning C4047: '=': 'char (*)[10]' differs in levels of indirection from 'char *'
+c:\users\benjamin poile\documents\visual studio 2015\projects\pa6\pa6\functions.c(227): warning C4047: '=': 'char (*)[10]' differs in levels of indirection from 'char *'
+c:\users\benjamin poile\documents\visual studio 2015\projects\pa6\pa6\functions.c(228): warning C4047: '=': 'char (*)[10]' differs in levels of indirection from 'char *'
+c:\users\benjamin poile\documents\visual studio 2015\projects\pa6\pa6\functions.c(229): warning C4047: '=': 'char (*)[10]' differs in levels of indirection from 'char *'
+c:\users\benjamin poile\documents\visual studio 2015\projects\pa6\pa6\functions.c(230): warning C4047: '=': 'char (*)[10]' differs in levels of indirection from 'char *'
+c:\users\benjamin poile\documents\visual studio 2015\projects\pa6\pa6\functions.c(234): warning C4047: 'return': 'char *' differs in levels of indirection from 'char (*)[10]'
+c:\users\benjamin poile\documents\visual studio 2015\projects\pa6\pa6\functions.c(237): warning C4716: 'check_shot': must return a value
+c:\users\benjamin poile\documents\visual studio 2015\projects\pa6\pa6\functions.c(238): warning C4716: 'check_if_ship_sunk': must return a value
+c:\users\benjamin poile\documents\visual studio 2015\projects\pa6\pa6\functions.c(239): warning C4716: 'is_winner': must return a value
+  PA6.vcxproj -> C:\Users\Benjamin Poile\documents\visual studio 2015\Projects\PA6\Debug\PA6.exe
   PA6.vcxproj -> C:\Users\Benjamin Poile\documents\visual studio 2015\Projects\PA6\Debug\PA6.pdb (Full PDB)

@@ -5,7 +5,7 @@ int welcome_screen(int menu_selection) {
 		case 1:
 			//Play Game
 			play_game();
-			return 1;
+			return 0;
 		case 2:
 			//Display Rules
 			printf("RULES");
@@ -136,56 +136,72 @@ char * place_ship(char board[10][10], int size, char ship_name[], char ship_code
 }
 
 char * place_ship_auto(char board[10][10], int size, char ship_code) {
-	int horizontal_or_vertical, row_s, row_e, column_s, column_e;
+	int horizontal_or_vertical = -1, row_s = 0, column_s = 0, column_e = 0, row_e = 0;
 	char error = 'x';
-
+	size -= 1;
 	do {
-		horizontal_or_vertical = rand() % 2; // 1 = horizontal, 0 = vertical
-		row_s = rand() % 10;
+		horizontal_or_vertical = rand() % 2; // 0 = H, 1 = V
+	 	row_s = rand() % 10;
 		column_s = rand() % 10;
 
-		if (horizontal_or_vertical == 1) {
+		if (horizontal_or_vertical == 0) { //Horizontal
 			row_e = row_s;
-			if (row_s > (10 - size))
-				column_e = column_s - size;
-			else
+			if (column_s < (size - 1)) {
 				column_e = column_s + size;
-		}
-		else {
+			} else {
+				column_e = column_s - size;
+			}
+		} else if(horizontal_or_vertical == 1) { //Vertical
 			column_e = column_s;
-			if (column_s > (10 - size))
-				row_e = row_s - size;
-			else
+			if (row_s < (size - 1)) {
 				row_e = row_s + size;
+			} else {
+				row_e = row_s - size;
+			}
 		}
+		
+	} while (error == '!');
+	size += 1;
+	
+	if (row_e == -1) {
+		row_e = 0;
+		row_s++;
+	} else if (row_s == -1) {
+		row_s = 0;
+		row_e++;
+	} else if (column_e == -1) {
+		column_e = 0;
+		column_s++;
+	} else if (column_s == -1) {
+		 column_s = 0;
+		 column_e++;
+	}
 
-		if (check_collision(board, size, row_s, row_e, column_s, column_e) == 0)
-			error = '!';
+	/*if (check_collision(board, size, row_s, row_e, column_s, column_e) == 0)
+		error = '!';*/
 
-		if (row_s == row_e)
-			for (int i = 0; i < size; i++)
-				board[((int)row_s) - 65][column_s + i] = ship_code;
-		else if (column_s == column_e)
-			for (int i = 0; i < size; i++)
-				board[(((int)row_s) - 65) + i][column_s] = ship_code;
-		else
-			printf("Something is seriously fucky here Ben!");
+	/*if (row_s == row_e)
+		for (int i = 0; i < size; i++)
+			board[((int)row_s) - 65][column_s + i] = ship_code;
+	else if (column_s == column_e)
+		for (int i = 0; i < size; i++)
+			board[(((int)row_s) - 65) + i][column_s] = ship_code;
+	else
+		printf("Something is seriously fucky here Ben!");*/
 
-		if (error == '!')
-			printf("\nSomething was wrong with your input, please try again.\n");
-	} while (error != '!');
+	printf("\nSize %d; %d %d to %d %d", size, row_s, column_s, row_e, column_e);
 
 	return board;
 }
 
-int check_collision(char board[10][10], int size, int sr, int er, int sc, int ec) {
-	if (sr == er) //horizontal
+int check_collision(char board[10][10], int size, int row_s, int row_e, int column_s, int column_e) {
+	if (row_s == row_e) //horizontal
 		for (int i = 0; i <= size; i++)
-			if (board[sc + i][sr] != '-')
+			if (board[column_s + i][row_s] != '-')
 				return 0;
-	else
+	else 
 		for (int i = 0; i <= size; i++)
-			if (board[sc][sr+i] != '-')
+			if (board[column_s][row_s+i] != '-')
 				return 0;
 	
 	return 1;
@@ -200,12 +216,14 @@ char * manually_place_ships(char board[10][10]) {
 	board = place_ship(board, 2, "Destroyer", 'd');
 	
 	display_board(board);
-
+	printf("NOT RETURN OR CRASH");
 	return board;
 }
 
 char * randomly_place_ships(char board[10][10]) {
 	board = place_ship_auto(board, 5, 'c');
+	display_board(board);
+
 	board = place_ship_auto(board, 4, 'b');
 	board = place_ship_auto(board, 3, 'r');
 	board = place_ship_auto(board, 3, 's');
