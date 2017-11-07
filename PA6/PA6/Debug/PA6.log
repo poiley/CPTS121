@@ -35,5 +35,6 @@ c:\users\benjamin poile\documents\visual studio 2015\projects\pa6\pa6\functions.
 c:\users\benjamin poile\documents\visual studio 2015\projects\pa6\pa6\functions.c(237): warning C4716: 'check_shot': must return a value
 c:\users\benjamin poile\documents\visual studio 2015\projects\pa6\pa6\functions.c(238): warning C4716: 'check_if_ship_sunk': must return a value
 c:\users\benjamin poile\documents\visual studio 2015\projects\pa6\pa6\functions.c(239): warning C4716: 'is_winner': must return a value
+  LINK : C:\Users\Benjamin Poile\documents\visual studio 2015\Projects\PA6\Debug\PA6.exe not found or not built by the last incremental link; performing full link
   PA6.vcxproj -> C:\Users\Benjamin Poile\documents\visual studio 2015\Projects\PA6\Debug\PA6.exe
   PA6.vcxproj -> C:\Users\Benjamin Poile\documents\visual studio 2015\Projects\PA6\Debug\PA6.pdb (Full PDB)
