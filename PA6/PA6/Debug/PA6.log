@@ -1,7 +1,33 @@
-﻿  Main.c
-c:\users\benjamin poile\documents\visual studio 2015\projects\pa6\pa6\main.c(5): warning C4013: 'srand' undefined; assuming extern returning int
-c:\users\benjamin poile\documents\visual studio 2015\projects\pa6\pa6\main.c(9): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+﻿  Functions.c
+c:\users\benjamin poile\documents\visual studio 2015\projects\pa6\pa6\functions.c(42): warning C4047: '=': 'char' differs in levels of indirection from 'char *'
+c:\users\benjamin poile\documents\visual studio 2015\projects\pa6\pa6\functions.c(44): warning C4047: '=': 'char' differs in levels of indirection from 'char *'
+c:\users\benjamin poile\documents\visual studio 2015\projects\pa6\pa6\functions.c(48): warning C4047: '=': 'char' differs in levels of indirection from 'char *'
+c:\users\benjamin poile\documents\visual studio 2015\projects\pa6\pa6\functions.c(100): warning C4013: 'system' undefined; assuming extern returning int
+c:\users\benjamin poile\documents\visual studio 2015\projects\pa6\pa6\functions.c(40): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1270): note: see declaration of 'scanf'
-  LINK : C:\Users\Benjamin Poile\documents\visual studio 2015\Projects\PA6\Debug\PA6.exe not found or not built by the last incremental link; performing full link
-  PA6.vcxproj -> C:\Users\Benjamin Poile\documents\visual studio 2015\Projects\PA6\Debug\PA6.exe
-  PA6.vcxproj -> C:\Users\Benjamin Poile\documents\visual studio 2015\Projects\PA6\Debug\PA6.pdb (Full PDB)
+c:\users\benjamin poile\documents\visual studio 2015\projects\pa6\pa6\functions.c(57): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1270): note: see declaration of 'scanf'
+c:\users\benjamin poile\documents\visual studio 2015\projects\pa6\pa6\functions.c(105): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1270): note: see declaration of 'scanf'
+c:\users\benjamin poile\documents\visual studio 2015\projects\pa6\pa6\functions.c(238): warning C4013: 'check_collision' undefined; assuming extern returning int
+c:\users\benjamin poile\documents\visual studio 2015\projects\pa6\pa6\functions.c(259): warning C4047: 'return': 'char *' differs in levels of indirection from 'char (*)[10]'
+c:\users\benjamin poile\documents\visual studio 2015\projects\pa6\pa6\functions.c(201): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1270): note: see declaration of 'scanf'
+c:\users\benjamin poile\documents\visual studio 2015\projects\pa6\pa6\functions.c(215): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1270): note: see declaration of 'scanf'
+c:\users\benjamin poile\documents\visual studio 2015\projects\pa6\pa6\functions.c(267): warning C4013: 'rand' undefined; assuming extern returning int
+c:\users\benjamin poile\documents\visual studio 2015\projects\pa6\pa6\functions.c(319): warning C4047: 'return': 'char *' differs in levels of indirection from 'char (*)[10]'
+c:\users\benjamin poile\documents\visual studio 2015\projects\pa6\pa6\functions.c(337): warning C4047: '=': 'char (*)[10]' differs in levels of indirection from 'char *'
+c:\users\benjamin poile\documents\visual studio 2015\projects\pa6\pa6\functions.c(339): warning C4047: '=': 'char (*)[10]' differs in levels of indirection from 'char *'
+c:\users\benjamin poile\documents\visual studio 2015\projects\pa6\pa6\functions.c(340): warning C4047: '=': 'char (*)[10]' differs in levels of indirection from 'char *'
+c:\users\benjamin poile\documents\visual studio 2015\projects\pa6\pa6\functions.c(341): warning C4047: '=': 'char (*)[10]' differs in levels of indirection from 'char *'
+c:\users\benjamin poile\documents\visual studio 2015\projects\pa6\pa6\functions.c(342): warning C4047: '=': 'char (*)[10]' differs in levels of indirection from 'char *'
+c:\users\benjamin poile\documents\visual studio 2015\projects\pa6\pa6\functions.c(344): warning C4047: 'return': 'char *' differs in levels of indirection from 'char (*)[10]'
+c:\users\benjamin poile\documents\visual studio 2015\projects\pa6\pa6\functions.c(348): warning C4047: '=': 'char (*)[10]' differs in levels of indirection from 'char *'
+c:\users\benjamin poile\documents\visual studio 2015\projects\pa6\pa6\functions.c(349): warning C4047: '=': 'char (*)[10]' differs in levels of indirection from 'char *'
+c:\users\benjamin poile\documents\visual studio 2015\projects\pa6\pa6\functions.c(350): warning C4047: '=': 'char (*)[10]' differs in levels of indirection from 'char *'
+c:\users\benjamin poile\documents\visual studio 2015\projects\pa6\pa6\functions.c(351): warning C4047: '=': 'char (*)[10]' differs in levels of indirection from 'char *'
+c:\users\benjamin poile\documents\visual studio 2015\projects\pa6\pa6\functions.c(352): warning C4047: '=': 'char (*)[10]' differs in levels of indirection from 'char *'
+c:\users\benjamin poile\documents\visual studio 2015\projects\pa6\pa6\functions.c(359): warning C4047: 'return': 'char *' differs in levels of indirection from 'char (*)[10]'
+  PA6.vcxproj -> C:\Users\Benjamin Poile\Documents\Visual Studio 2015\Projects\PA6\Debug\PA6.exe
+  PA6.vcxproj -> C:\Users\Benjamin Poile\Documents\Visual Studio 2015\Projects\PA6\Debug\PA6.pdb (Full PDB)

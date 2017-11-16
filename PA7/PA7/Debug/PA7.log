@@ -1,0 +1,8 @@
+﻿  Main.c
+c:\users\benjamin poile\documents\visual studio 2015\projects\pa7\pa7\main.c(20): warning C4047: 'function': 'Card **' differs in levels of indirection from 'Card (*)[5]'
+c:\users\benjamin poile\documents\visual studio 2015\projects\pa7\pa7\main.c(20): warning C4024: 'deal': different types for formal and actual parameter 4
+c:\users\benjamin poile\documents\visual studio 2015\projects\pa7\pa7\main.c(15): warning C4047: 'initializing': 'char *' differs in levels of indirection from 'int'
+c:\users\benjamin poile\documents\visual studio 2015\projects\pa7\pa7\main.c(64): warning C4090: 'function': different 'const' qualifiers
+c:\users\benjamin poile\documents\visual studio 2015\projects\pa7\pa7\main.c(95): warning C4013: 'tolower' undefined; assuming extern returning int
+  PA7.vcxproj -> C:\Users\Benjamin Poile\documents\visual studio 2015\Projects\PA7\Debug\PA7.exe
+  PA7.vcxproj -> C:\Users\Benjamin Poile\documents\visual studio 2015\Projects\PA7\Debug\PA7.pdb (Full PDB)

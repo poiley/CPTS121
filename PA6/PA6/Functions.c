@@ -2,20 +2,20 @@
 
 int welcome_screen(int menu_selection) {
 	switch (menu_selection) {
-		case 1:
-			//Play Game
-			play_game();
-			return 0;
-		case 2:
-			//Display Rules
-			printf("RULES");
-			return 1;
-		case 3:
-			printf("\nQuitting!\n");
-			return 0;
-		default:
-			printf("Invalid input!");
-			return 1;
+	case 1:
+		//Play Game
+		play_game();
+		return 0;
+	case 2:
+		//Display Rules
+		printf("RULES");
+		return 1;
+	case 3:
+		printf("\nQuitting!\n");
+		return 0;
+	default:
+		printf("Invalid input!");
+		return 1;
 	}
 }
 
@@ -62,10 +62,11 @@ void play_game(void) {
 			guess_status = 0;
 			printf("\nMISS");
 			player2_board[guessed_row_int][guessed_column] = 'm';
-		} else if (player2_board[guessed_row_int][guessed_column] != '-' || player2_board[guessed_row_int][guessed_column] != 'x') { //MISS
+		}
+		else if (player2_board[guessed_row_int][guessed_column] != '-' || player2_board[guessed_row_int][guessed_column] != 'x') { //MISS
 			guess_status = 1;
 			printf("\nHIT!");
-			
+
 			char hit_cell = player2_board[guessed_row_int][guessed_column];
 			player2_board[guessed_row_int][guessed_column] = 'x';
 
@@ -94,8 +95,8 @@ void play_game(void) {
 				win = 1;
 				break;
 			}
-		} 
-		
+		}
+
 		system("cls");
 
 		/*PLAYER 2 TURN*/
@@ -109,10 +110,12 @@ void play_game(void) {
 			guess_status = 0;
 			printf("\nMISS");
 			player1_board[guessed_row_int][guessed_column] = 'm';
-		} else if (player1_board[guessed_row_int][guessed_column] == 'x') {
+		}
+		else if (player1_board[guessed_row_int][guessed_column] == 'x') {
 			printf("You have already guessed this coordinate!");
 			continue;
-		} else if (player1_board[guessed_row_int][guessed_column] != '-' || player1_board[guessed_row_int][guessed_column] != 'x') { //MISS
+		}
+		else if (player1_board[guessed_row_int][guessed_column] != '-' || player1_board[guessed_row_int][guessed_column] != 'x') { //MISS
 			guess_status = 1;
 			printf("\nHIT!");
 
@@ -122,16 +125,20 @@ void play_game(void) {
 			if (ship_sunk(player1_board, 'c') == 1 && hit_cell == 'c') {
 				printf("\nCarrier sunk!");
 				player2_sunk++;
-			} else if (ship_sunk(player1_board, 'b') == 1 && hit_cell == 'b') {
+			}
+			else if (ship_sunk(player1_board, 'b') == 1 && hit_cell == 'b') {
 				printf("\nBattleship sunk!");
 				player2_sunk++;
-			} else if (ship_sunk(player1_board, 'r') == 1 && hit_cell == 'r') {
+			}
+			else if (ship_sunk(player1_board, 'r') == 1 && hit_cell == 'r') {
 				printf("\nCruiser sunk!");
 				player2_sunk++;
-			} else if (ship_sunk(player1_board, 's') == 1 && hit_cell == 's') {
+			}
+			else if (ship_sunk(player1_board, 's') == 1 && hit_cell == 's') {
 				printf("\nSubmarine sunk!");
 				player2_sunk++;
-			} else if (ship_sunk(player1_board, 'd') == 1 && hit_cell == 'd') {
+			}
+			else if (ship_sunk(player1_board, 'd') == 1 && hit_cell == 'd') {
 				printf("\nDestroyer sunk!");
 				player2_sunk++;
 			}
@@ -140,13 +147,14 @@ void play_game(void) {
 				win = 2;
 				break;
 			}
-			system("cls"); 
+			system("cls");
 		}
 	} while (win == 0);
 
 	if (win == 1) {
 		printf("Congratulations Player 1! You have won the game.");
-	} else {
+	}
+	else {
 		printf("Congratulations Player 2! You have won the game.");
 	}
 }
@@ -174,7 +182,7 @@ void display_board(char board[10][10]) {
 	printf("-\n");
 	for (int i = 0; i < 10; i++) {
 		for (int j = 0; j < 10; j++) {
-			if (j == 0) 
+			if (j == 0)
 				printf("| %c ", 65 + i);
 			printf("| %c ", board[i][j]);
 		}
@@ -186,71 +194,63 @@ void display_board(char board[10][10]) {
 
 char * place_ship(char board[10][10], int size, char ship_name[], char ship_code) {
 	char input_c = '!', row_s, row_e;
-	int input_i = -1, column_s, column_e;
+	int input_i = -1, column_s, column_e, row_s_int, row_e_int;
 
 	do {
 		printf("What's the starting coordinate for the ship %s?\n", ship_name);
 		scanf(" %c%d", &input_c, &input_i);
-		if ((((int)input_c) - 65) < 0 || (((int)input_c) - 65) > 9)
-			input_c = '!';
-		row_s = input_c;
 
-		if (input_i > 9 || input_i < 0)
-			input_c = '!';
+		row_s = input_c;
+		row_s_int = (int)row_s - 65;
 		column_s = input_i;
 
-		if (board[(int)row_s - 65][column_s] != '-') input_c = '!';
+		if (row_s_int < 0 || row_s_int > 10 || column_s < 0 || column_s > 10) {
+			printf("\nSomething was wrong with your input, please try again.\n");
+			continue;
+		}
 
 		printf("Starting coordinate is %c%d\n", row_s, column_s);
 
-		printf("Would you like to place this (H)orizontally or (V)ertically?\n");
-		scanf(" %c", &input_c);
-		
-		if (input_c == 'V') {
+		printf("Would you like to place this 1. Horizontally or 2. Vertically?\n");
+		scanf("%d", &input_i);
+
+		if (input_i == 1) {
 			column_e = column_s;
-			if ((int)row_s < (64 + size)) {
-				row_e = row_s + size;
-			} else if ((int)row_s >(75 - size)) {
-				row_e = row_s - size;
-			} else {
-				printf("Would you like the %s to move (U)p or (D)own from your starting coordinate?\n", ship_name);
-				scanf(" %c", &input_c);
-				if (input_c == 'U') row_e = (char)((int)row_s - size);
-				else if (input_c == 'D') row_e = (char)((int)row_s + size);
-				else input_c = '!';
+			if ((row_s_int + size) > 10) {
+				printf("\nSomething was wrong with your input, please try again.\n");
+				continue;
 			}
-		} else if (input_c == 'H') {
+			row_e_int = row_s_int + size;
+			row_e = (char)((int) row_s + size);
+		} else if (input_i == 0) {
 			row_e = row_s;
-			if (column_s < (size - 1)) {
-				column_e = column_s + size;
+			if ((column_s + size) > 10) {
+				printf("\nSomething was wrong with your input, please try again.\n");
+				continue;
 			}
-			else if (column_s >(10 - size)) {
-				column_e = column_s - size;
-			}
-			else {
-				printf("Would you like the %s to move (L)eft or (R)ight from your starting coordinate?\n", ship_name);
-				scanf(" %c", &input_c);
-				if (input_c == "L") column_e = column_s - size;
-				else if (input_c = "R") column_e = column_s + size;
-				else input_c = '!';
-			}
+
+			column_e = column_s + size;
 		} else {
-			input_c = '!';
+			printf("\nSomething was wrong with your input, please try again.\n");
+			continue;
 		}
 
-		if (check_collision(board, size, ((int)row_s) - 65, ((int)row_e) - 65, column_s, column_e) == 0)
-			input_c = '!';
+		if (check_collision(board, size, row_s_int, row_e_int, column_s, column_e) == 0) {
+			printf("\nSomething was wrong with your input, please try again.\n");
+			continue;
+		}
 
-		if (row_s == row_e)
+		if (row_s == row_e) {
 			for (int i = 0; i < size; i++)
-				board[((int)row_s) - 65][column_s + i] = ship_code;
-		else if (column_s == column_e)
+				board[row_s_int + i][column_s] = ship_code;
+			break;
+		} else if (column_s == column_e) {
 			for (int i = 0; i < size; i++)
-				board[(((int)row_s) - 65) + i][column_s] = ship_code;
-		else
-			printf("Something is seriously fucky here Ben!");
-		
-		printf("\n%d", check_collision(board, size, row_s, row_e, column_s, column_e));
+				board[row_s_int][column_s + i] = ship_code;
+			break;
+		} else {
+			continue;
+		}
 
 		if (input_c == '!')
 			printf("\nSomething was wrong with your input, please try again.\n");
@@ -265,7 +265,7 @@ char * place_ship_auto(char board[10][10], int size, char ship_code) {
 	size--;
 	do {
 		horizontal_or_vertical = rand() % 2; // 0 = H, 1 = V
-	 	row_s = rand() % 10;
+		row_s = rand() % 10;
 		column_s = rand() % 10;
 
 		if (horizontal_or_vertical == 0) { //Horizontal
@@ -274,24 +274,28 @@ char * place_ship_auto(char board[10][10], int size, char ship_code) {
 				column_e = column_s + size;
 			else
 				column_e = column_s - size;
-		} else if(horizontal_or_vertical == 1) { //Vertical
+		}
+		else if (horizontal_or_vertical == 1) { //Vertical
 			column_e = column_s;
 			if (row_s < (size - 1))
 				row_e = row_s + size;
-			else 
+			else
 				row_e = row_s - size;
 		}
 
 		if (row_e == -1) {
 			row_e = 0;
 			row_s--;
-		} else if (row_s == -1) {
+		}
+		else if (row_s == -1) {
 			row_s = 0;
 			row_e++;
-		} else if (column_e == -1) {
+		}
+		else if (column_e == -1) {
 			column_e = 0;
 			column_s--;
-		} else if (column_s == -1) {
+		}
+		else if (column_s == -1) {
 			column_s = 0;
 			column_e++;
 		}
@@ -299,10 +303,10 @@ char * place_ship_auto(char board[10][10], int size, char ship_code) {
 		error = 'x';
 		if (check_collision(board, size, row_s, row_e, column_s, column_e) == 0)
 			continue;
-		
+
 	} while (error == '!');
-	
-	size++;	
+
+	size++;
 	if (row_s == row_e)
 		for (int i = 0; i < size; i++)
 			board[row_s][column_s + i] = ship_code;
@@ -312,29 +316,31 @@ char * place_ship_auto(char board[10][10], int size, char ship_code) {
 	else
 		printf("Something is seriously fucky here Ben!");
 
-	return board; 
+	return board;
 }
 
 int check_collision(char board[10][10], int size, int row_s, int row_e, int column_s, int column_e) {
-	if (row_s == row_e) //horizontal
-		for (int i = 0; i <= size; i++) 
+	if (row_s == row_e) { //horizontal
+		for (int i = 0; i < size; i++)
 			if (board[column_s + i][row_s] != '-')
 				return 0;
-	else
-		for (int i = 0; i <= size; i++)
+	} else {
+		for (int i = 0; i < size; i++)
 			if (board[column_s][row_s + i] != '-')
 				return 0;
+	}
 	return 1;
 }
 
 // Carrier first, Battleship second, Cruiser third, Submarine fourth, and the Destroyer last.
 char * manually_place_ships(char board[10][10]) {
 	board = place_ship(board, 5, "Carrier", 'c');
+	display_board(board);
 	board = place_ship(board, 4, "Battleship", 'b');
 	board = place_ship(board, 3, "Cruiser", 'r');
 	board = place_ship(board, 3, "Submarine", 's');
 	board = place_ship(board, 2, "Destroyer", 'd');
-	
+
 	return board;
 }
 
