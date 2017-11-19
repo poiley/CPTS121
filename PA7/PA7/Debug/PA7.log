@@ -1,8 +1,17 @@
 ﻿  Main.c
-c:\users\benjamin poile\documents\visual studio 2015\projects\pa7\pa7\main.c(20): warning C4047: 'function': 'Card **' differs in levels of indirection from 'Card (*)[5]'
-c:\users\benjamin poile\documents\visual studio 2015\projects\pa7\pa7\main.c(20): warning C4024: 'deal': different types for formal and actual parameter 4
+c:\users\benjamin poile\documents\visual studio 2015\projects\pa7\pa7\main.c(29): warning C4047: 'function': 'int (*)[13]' differs in levels of indirection from 'Card [5]'
+c:\users\benjamin poile\documents\visual studio 2015\projects\pa7\pa7\main.c(29): warning C4024: 'dealer': different types for formal and actual parameter 1
+c:\users\benjamin poile\documents\visual studio 2015\projects\pa7\pa7\main.c(29): warning C4047: 'function': 'Card *' differs in levels of indirection from 'int [4][13]'
+c:\users\benjamin poile\documents\visual studio 2015\projects\pa7\pa7\main.c(29): warning C4024: 'dealer': different types for formal and actual parameter 2
 c:\users\benjamin poile\documents\visual studio 2015\projects\pa7\pa7\main.c(15): warning C4047: 'initializing': 'char *' differs in levels of indirection from 'int'
-c:\users\benjamin poile\documents\visual studio 2015\projects\pa7\pa7\main.c(64): warning C4090: 'function': different 'const' qualifiers
-c:\users\benjamin poile\documents\visual studio 2015\projects\pa7\pa7\main.c(95): warning C4013: 'tolower' undefined; assuming extern returning int
-  PA7.vcxproj -> C:\Users\Benjamin Poile\documents\visual studio 2015\Projects\PA7\Debug\PA7.exe
-  PA7.vcxproj -> C:\Users\Benjamin Poile\documents\visual studio 2015\Projects\PA7\Debug\PA7.pdb (Full PDB)
+c:\users\benjamin poile\documents\visual studio 2015\projects\pa7\pa7\main.c(16): warning C4047: 'initializing': 'char *' differs in levels of indirection from 'int'
+c:\users\benjamin poile\documents\visual studio 2015\projects\pa7\pa7\main.c(38): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1270): note: see declaration of 'scanf'
+c:\users\benjamin poile\documents\visual studio 2015\projects\pa7\pa7\main.c(42): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1270): note: see declaration of 'scanf'
+c:\users\benjamin poile\documents\visual studio 2015\projects\pa7\pa7\main.c(142): warning C4090: 'function': different 'const' qualifiers
+c:\users\benjamin poile\documents\visual studio 2015\projects\pa7\pa7\main.c(185): warning C4090: 'function': different 'const' qualifiers
+c:\users\benjamin poile\documents\visual studio 2015\projects\pa7\pa7\main.c(216): warning C4013: 'tolower' undefined; assuming extern returning int
+c:\users\benjamin poile\documents\visual studio 2015\projects\pa7\pa7\main.c(147): warning C4715: 'newCard': not all control paths return a value
+  PA7.vcxproj -> C:\Users\Benjamin Poile\Documents\Visual Studio 2015\Projects\PA7\Debug\PA7.exe
+  PA7.vcxproj -> C:\Users\Benjamin Poile\Documents\Visual Studio 2015\Projects\PA7\Debug\PA7.pdb (Full PDB)
