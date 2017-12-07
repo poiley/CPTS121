@@ -1,5 +1,6 @@
 ﻿  Main.c
-c:\users\benjamin poile\documents\visual studio 2015\projects\pa8\pa8\main.c(43): warning C4047: 'function': 'char *' differs in levels of indirection from 'int'
-c:\users\benjamin poile\documents\visual studio 2015\projects\pa8\pa8\main.c(43): warning C4024: 'maximum_occurences': different types for formal and actual parameter 4
+c:\users\benjamin poile\documents\visual studio 2015\projects\pa8\pa8\header.h(12): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+c:\users\benjamin poile\documents\visual studio 2015\projects\pa8\pa8\main.c(42): warning C4047: 'function': 'char *' differs in levels of indirection from 'int'
+c:\users\benjamin poile\documents\visual studio 2015\projects\pa8\pa8\main.c(42): warning C4024: 'maximum_occurences': different types for formal and actual parameter 4
   PA8.vcxproj -> C:\Users\Benjamin Poile\documents\visual studio 2015\Projects\PA8\Debug\PA8.exe
   PA8.vcxproj -> C:\Users\Benjamin Poile\documents\visual studio 2015\Projects\PA8\Debug\PA8.pdb (Full PDB)
